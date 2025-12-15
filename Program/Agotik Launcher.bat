@@ -21,7 +21,7 @@ if not "%1"=="admin" (
 )
 title Agotik Launcher - Выполняется первоначальная настройка...
 ::SET
-set "LOCAL_VERSION=Pre-release 2.01"
+set "LOCAL_VERSION=Pre-release 2.02"
 set "this.d=%~dp0"
 set "this.d=%this.d:~0,-1%"
 set "this=%~f0"
@@ -134,6 +134,7 @@ exit /b
 
 
 :program
+
 title Agotik Launcher - Главная
 cd %this.d%
 
@@ -309,6 +310,11 @@ if not exist C:\Windows\System32\WBEM\wmic.exe (
 )
 echo.
 pause
+cd %this.d%\settings
+if exist bypass.bin (
+	chcp 866>nul
+)
+cd %this.d	%
 goto program
 
 
@@ -575,7 +581,7 @@ exit
 :PrintGreen
 chcp 866>nul
 powershell -Command "Write-Host \"%~1\" -ForegroundColor Green"
-chcp 866>nul
+chcp 65001>nul
 exit /b
 
 :PrintRed
