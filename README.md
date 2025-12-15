@@ -1,1 +1,1 @@
-# Agotic-Launcher
+# Agotik-Launcher
